@@ -1,15 +1,15 @@
 import React from 'react';
-import {Div} from '../Sections'
 import {Colors, StyledBackgroundSection} from '../Styling';
 import Img from "gatsby-image"
 import {H2, H3, H4, Title, Paragraph} from '../Heading'
 import Link from 'gatsby-link'
 import Card from '../Card';
 import Fragment from "../Fragment"
+import DragScrollProvider from '../DragScrollProvider'
 const OurPartners = props => {
   return (
     <Fragment margin={props.margin} padding="20px 0" github="/components/partner" >
-      <Div className="badge-slider" justifyContent="between" margin="0 0 60px 0">
+      <DragScrollProvider>
         {props.images.map((l, i) => {
           return (
             // <Div key={i} minWidth="200px" height="60px" margin="0 15px" >
@@ -22,8 +22,7 @@ const OurPartners = props => {
             // </Div>
           )
         })}
-
-      </Div>
+      </DragScrollProvider>
     </Fragment>
 
     // <Div display="flex" height="auto" style={{overflowX: "auto"}}>
