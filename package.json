@@ -29,9 +29,9 @@
     "start:storybook": "start-storybook -p 9000 -c .storybook",
     "build": "npm run test && gatsby build",
     "build:gatsby": "gatsby build",
-    "serve": "gatsby serve -o -p 8080 && cypress open",
+    "serve": "gatsby serve -o -p 8080",
     "clean": "gatsby clean",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --browser chrome",
     "cy:dev": "cypress open"
   },
   "dependencies": {

@@ -85,6 +85,7 @@ const Home = (props) => {
             {/* <Paragraph textAlign_tablet="left" >{yml.info_box.phone} </Paragraph>
                     <Paragraph textAlign_tablet="left" >{yml.info_box.email} </Paragraph> */}
             <ChooseProgram
+              className="ChooseProgram-home"
               right="15px"
               top="40px"
               // margin="40px 0"

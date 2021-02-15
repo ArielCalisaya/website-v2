@@ -9,7 +9,7 @@ import DragScrollProvider from '../DragScrollProvider'
 const OurPartners = props => {
   return (
     <Fragment margin={props.margin} padding="20px 0" github="/components/partner" >
-      <DragScrollProvider>
+      <DragScrollProvider className="testimonial-slider" id="DragScroll-Partners" justifyContent="between" margin="0 0 60px 0">
         {props.images.map((l, i) => {
           return (
             // <Div key={i} minWidth="200px" height="60px" margin="0 15px" >
