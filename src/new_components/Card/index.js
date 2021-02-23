@@ -25,7 +25,7 @@ const Card = styled(Fragment)`
     z-index: ${props => props.index};
     text-align: ${props => props.align || "initial"};
     flex-direction: column;
-    min-height: ${props => props.minHeight}
+    min-height: ${props => props.minHeight};
     width: ${props => props.width};
     max-width: ${props => props.maxWidth};
     height: ${props => props.height};
@@ -34,8 +34,7 @@ const Card = styled(Fragment)`
     border-radius: ${props => props.borders};
     transform: ${props => props.transform};
     display: ${props => props.display};
-    box-shadow: ${props => props.shadow === true ?
-    `0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);`
+    box-shadow: ${props => props.shadow === true ? "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
     :
     props.shadow
   }

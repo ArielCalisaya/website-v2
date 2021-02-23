@@ -35,6 +35,7 @@ export const Container = styled(Fragment)`
             max-width: 960px;
             height: ${props => props.height_md};
             transform: ${props => props.transform_md};
+            padding: ${props => props.padding_md};
             
         }
         @media  ${Devices.lg}{
@@ -135,6 +136,38 @@ const justifyContentOptions = {
     "start": "flex-start",
 }
 
+
+export const HR = styled.hr`
+    background: ${props => props.background};
+    height: ${props => props.height};
+    border: ${props => props.border || '0px'};
+    margin: ${props => props.margin || '0px'};
+    padding: ${props => props.padding || '0px'};
+    width: ${props => props.width};
+
+    @media ${Devices.xxs}{
+    }
+    @media ${Devices.xs}{
+    }
+    @media  ${Devices.sm}{   
+    }
+    @media  ${Devices.tablet}{
+        margin: ${props => props.margin_tablet};
+        width: ${props => props.width_tablet};
+        height: ${props => props.height_tablet};
+    }
+    @media  ${Devices.md}{
+        width: ${props => props.width_md};
+        height: ${props => props.height_md};
+        margin: ${props => props.margin_md};
+    }
+    @media  ${Devices.lg}{
+    }
+    @media  ${Devices.xl}{
+    }
+`
+
+
 export const Div = styled.div`
     padding: ${props => props.padding};
     height: ${props => props.height};
@@ -172,11 +205,11 @@ export const Div = styled.div`
     }
     @media  ${Devices.sm}{
         padding: ${props => props.padding_sm};
-        
     }
     @media  ${Devices.tablet}{
         display: ${props => props.display_tablet};
         padding: ${props => props.padding_tablet};
+        flex: ${props => props.flex_tablet};
         
     }
     @media  ${Devices.md}{
@@ -214,6 +247,8 @@ export const Row = styled(Div)`
     margin-left: ${props => props.marginLeft};
     margin-top: ${props => props.marginTop};
     margin-bottom: ${props => props.marginBottom};
+    justify-content: ${props => props.justifyContent};
+    padding: ${props => props.padding};
     
     &:hover { 
         background: ${props => props.backgroundHover};
@@ -227,8 +262,10 @@ export const Row = styled(Div)`
         margin: ${props => props.m_sm};
         justify-content: ${props => props.alignResp || "center"};
         flex-direction: ${props => props.flexDirection_sm};
+        
     }
     @media ${Break.xs}{
+        
         width: ${props => props.width_xs};
         display: ${props => props.display_xs};
         justify-content: ${props => props.alignResp || "center"};
@@ -248,6 +285,7 @@ export const Column = styled(Div)`
     padding-right: ${props => props.paddingRight};
     padding-left: ${props => props.paddingLeft};
     flex-direction: ${props => props.flexDirection};
+    justify-content: ${props => props.justifyContent};
     
     flex: 0 0 ${props => (props.size / 12) * 100}%;
     max-width: ${props => (props.size / 12) * 100}%;
@@ -272,6 +310,7 @@ export const Column = styled(Div)`
         padding-left: ${props => props.pl_md};
         height: ${props => props.h_md};
         display: ${props => props.disp_md};
+        grid-template-columns: ${props => props.templateColumns}
     }
     @media ${Break.sm}{
         flex: 0 0 ${props => (props.size_sm / 12) * 100}%;

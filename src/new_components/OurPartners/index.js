@@ -14,6 +14,7 @@ const OurPartners = props => {
           return (
             // <Div key={i} minWidth="200px" height="60px" margin="0 15px" >
             <Img
+              draggable="false"
               style={{height: "80px", minWidth: "120px", margin: "0 15px"}}
               imgStyle={{objectFit: "contain"}}
               alt={l.name}

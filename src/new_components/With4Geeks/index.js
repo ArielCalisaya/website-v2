@@ -59,7 +59,7 @@ export default ({lang, playerHeight}) => {
             border_md={`1px solid ${Colors.lightGray}`}
             // justifyContent="spece-between"
             key={index}
-            style={{borderRadius: `3px`}}
+            style={{borderRadius: `3px`}} 
           >
             <Div
               padding="19px 0 0 25px"

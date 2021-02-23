@@ -52,6 +52,9 @@ export const Container = styled(Fragment)`
         padding: ${props => props.p_xs};
     }
     `
+// padding-right: 15px && padding-left: 15px estan estaticos no se puede cambiar a 0px de container
+
+
 const justifyContentOptions = {
     "around": "space-around",
     "center": "center",
@@ -103,6 +106,7 @@ export const Row = styled(Div)`
     margin-left: ${props => props.marginLeft};
     margin-top: ${props => props.marginTop};
     margin-bottom: ${props => props.marginBottom};
+    float: ${props => props.float};
     
     &:hover { 
         background: ${props => props.backgroundHover};
@@ -239,7 +243,8 @@ export const WrapperImage = (props) => {
                 height={props.height}
                 paddingRight="0"
                 backgroundSize={props.backgroundSize}
-            ><StyledBackgroundSection
+            >
+            <StyledBackgroundSection
                 className={props.className}
                 height={props.height}
                 borderRadius={props.customBorderRadius}

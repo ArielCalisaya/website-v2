@@ -3,11 +3,11 @@
 context('DragScrollProvider', () => {
     beforeEach(() => {
       cy.visit('http://192.168.0.9:8000/').wait(3000)
-      cy.get('.DragScroll').click()
+      cy.get('#DragScroll-Partners').click()
     })
   
     it('Should Scroll to the Right', () => {
-      cy.get('.DragScroll').scrollTo('right')
+      cy.get('#DragScroll-Partners').scrollTo('right', { duration: 2000 })
     })
   })
   

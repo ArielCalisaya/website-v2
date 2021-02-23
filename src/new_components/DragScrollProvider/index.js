@@ -17,6 +17,7 @@ const DragScrollProvider = (props) => {
   };
 
   const onMouseMove = e => {
+    e.preventDefault()
     if (isGrabbing) {
       dragIt.current.scrollLeft = dragIt.current.scrollLeft - e.clientX + clientX;
       setClientX(e.clientX);

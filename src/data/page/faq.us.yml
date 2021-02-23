@@ -30,7 +30,7 @@ faq:
     answer: |-
       "Node is amazing.  It challenges the way the web is created.  However, only 0.3% of the web has adopted Node JS, and its growth has slowed even further over the last months.  Python, Java, PHP, and other similar languages still rule the world (and that is not going to change anytime soon).  They work in a very different way than Node does; our purpose is to prepare you for the “real world.”  We train our Full-Stack Developers using/teaching only the most standard and professional technologies.
       <a class="faq-link" href="https://4geeksacademy.co/us/post/dont-teach-nodejs-full-stack-development-program">Here</a> you can find a great argument as to why we are not teaching Node JS."
-  - question: "Why 4Geeks Academy?"
+  - question: "Why 4Geeks Academy?" 
     answer: |-
       "Well, it's kind of weird to talk about yourself a lot ... but, okay, since you asked!
       We offer a unique methodology in which we will improve your general capabilities; We will train you and turn you into a software developer. We are constantly bringing innovative new approaches to teaching programming that not many other educational organizations are doing.

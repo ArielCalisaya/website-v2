@@ -23,6 +23,7 @@ const Testimonials = (props) => {
                     return (
                         <Div display="flex" background="#ffffff" minWidth="245px" height="150px" margin="0 12px 0 0" padding="20px 24px 30px 20px" border="1px solid #EBEBEB" alignItems="flex-start">
                             <Img
+                                draggable="false"
                                 fluid={item.student_thumb.childImageSharp.fluid}
                                 alt={item.alt}
                                 style={{height: "39px", minWidth: "39px", backgroundSize: `cover`}}
