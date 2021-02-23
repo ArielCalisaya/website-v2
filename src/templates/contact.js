@@ -38,8 +38,6 @@ const Contact = (props) => {
         }
         return true;
     }
-
-console.log(yml)
     return (
         <form onSubmit={(e) => {
             e.preventDefault();
