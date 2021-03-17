@@ -1,7 +1,7 @@
 # for testing name: test-repo
-  # name: git-gateway
+  # name: test-repo
 backend:
-  name: test-repo
+  name: git-gateway
   branch: feature/netlifycms-master
   commit_messages:
     create: 'Create {{collection}} “{{slug}}” ✨'
@@ -12,13 +12,13 @@ backend:
 
 publish_mode: editorial_workflow
 show_preview_links: true
-site_url: "https://netlify-with-gatsby4blog.netlify.app"
-display_url: "https://netlify-with-gatsby4blog.netlify.app"
+# site_url: "https://netlify-with-gatsby4blog.netlify.app"
+# display_url: "https://netlify-with-gatsby4blog.netlify.app"
 
 # Wehere it create images
-media_folder: "/static/images/blog"
+# media_folder: "/static/images/"
 # where use the images
-public_folder: "/images/blog"
+# public_folder: "/images/blog"
 
 collections:
   - name: "blog"
@@ -26,6 +26,8 @@ collections:
     folder: "src/data/blog"
     extension: .md
     create: true
+    media_folder: "/static/images/blog"
+    public_folder: "/images/blog"
     widget: "object"
     #slug for markdown filename 
     slug: "{{slug}}.{{fields.lang}}"
@@ -52,6 +54,8 @@ collections:
     folder: "src/data/location"
     extension: .yml
     create: true
+    media_folder: "/static/images/locations"
+    public_folder: "/images/locations"
     widget: "object"
     #slug for markdown filename 
     slug: "{{slug}}.{{fields.defaultLanguage}}"
@@ -105,7 +109,184 @@ collections:
       - label: "Upcoming", 
         name: "upcoming",
           fields:
+          # TODO: ver si funciona object
           - { label: "Title", name: "title", widget: "object", default: "Upcoming programs in {{fields.name}}" }
+      
+      - label: "Carousel box",
+        name: "carousel_box",
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "What you should know about this location: " }
+          - { label: "Content", name: "content", widget: "string"}
+          - label: "Images",
+            name: "images",
+            fields:
+              - { label: "Path", name: "path", widget: "image" }
+              - { label: "Path2", name: "path", widget: "image" }
+      - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
+      - label: "Prices", 
+        name: "prices",
+        fields:
+          - label: "Full-Time", 
+            name: "full_time",
+            fields:
+              - { label: "Slug", name: "slug", default: "full-time"}
+              - { label: "Duration", name: "duration", widget: "string", default: "9 Weeks"}
+              - label: "Left section"
+                name: "left_section",
+                fields: 
+                  - label: "Header", 
+                    name: "header",
+                    fields:
+                      - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY ONLY AFTER"}
+                      - { label: "Heading two", name: "heading_two", widget: "string", default: "YOU GET A JOB"}
+                      - { label: "Sub heading", name: "sub_heading", widget: "string"}
+                  - label: "Content", 
+                    name: "content",
+                    fields:
+                      - { label: "Price", name: "price", widget: "string" }
+                      - { label: "Price Info", name: "price_info", widget: "string"}
+
+              - label: "Center section",
+                name: "center_section",
+                fields:
+                  - label: "Header", 
+                    name: "header",
+                    fields:
+                      - { label: "Heading one", name: "heading_one", widget: "string", default: "EXTENDED" }
+                      - { label: "Heading two", name: "heading_two", widget: "string", default: "PAYMENT PLAN" }
+                      - { label: "Sub heading", name: "sub_heading", widget: "string" }
+                  - label: "Plans",
+                    name: "plans",
+                    fields:
+                    # TODO: probar si funciona order array
+                      - { label: "Months", name: "months", widget: "string", default: "12" }
+                        - { label: "Payment", name: "payment", widget: "string", default: "210.641 CLP" }
+                        - { label: "Payment Info", name: "paymentInfo", widget: "string", default: "per month + 414.000 deposit" }
+                        - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+                        - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+                        - { label: "Message", name: "message", widget: "string", required: false }
+                      
+                      - { label: "Months", name: "months", widget: "string", default: "6" }
+                        - { label: "Payment", name: "payment", widget: "string", default: "407.121 CLP" }
+                        - { label: "Payment Info", name: "paymentInfo", widget: "string"}
+                        - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+                        - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+                        - { label: "Message", name: "message", widget: "string", required: false }
+
+                - label: "Right section", 
+                  name: "right_section",
+                  fields:
+                    - label: "Header", 
+                      name: "header",
+                      fields:
+                        - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY UPFRONT" }
+                        - { label: "Heading two", name: "heading_two", widget: "string", default: "(OUT OF POCKET)" }
+                        - { label: "Sub heading", name: "sub_heading", widget: "string" }
+                    - label: "Content", 
+                      name: "content",
+                      fields:
+                        - { label: "Price", name: "price", widget: "string" }
+                        - { label: "Price info", name: "price_info", widget: "string", defaul: "single payment" }
+
+
+          - label: "Part time",
+            name: "part_time",
+              fields: 
+                - { label: "Slug", name: "slug", widget: "string", defaul: "part-time"}
+                - { label: "Duration", name: "duration", widget: "string", defaul: "16 Weeks"}
+                - label: "Left section"
+                  name: "left_section",
+                  fields: 
+                    - label: "Header", 
+                      name: "header",
+                      fields:
+                        - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY ONLY AFTER"}
+                        - { label: "Heading two", name: "heading_two", widget: "string", default: "YOU GET A JOB"}
+                        - { label: "Sub heading", name: "sub_heading", widget: "string"}
+                    - label: "Content", 
+                      name: "content",
+                      fields:
+                        - { label: "Price", name: "price", widget: "string" }
+                        - { label: "Price Info", name: "price_info", widget: "string"}
+
+                - label: "Center section", 
+                  name: "center_section",
+                  fields:
+                    - label: "Header", 
+                      name: "header",
+                      fields:
+                        - { label: "Heading one", name: "heading_one", widget: "string", default: "EXTENDED" }
+                        - { label: "Heading two", name: "heading_two", widget: "string" }
+                        - { label: "Sub heading", name: "sub_heading", widget: "string", default: "and enjoy the best pricing in town" }
+                    - label: "Plans",
+                      name: "plans",
+                      fields:
+                        - { label: "Months", name: "months", widget: "string", default: "12" }
+                          - { label: "Payment", name: "payment", widget: "string", default: "184.311 CLP" }
+                          - { label: "Payment Info", name: "paymentInfo", widget: "string", default: "per month + 362.250 deposit" }
+                          - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+                          - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+                          - { label: "Message", name: "message", widget: "string", required: false }
+                        # Provar quiar -
+                        - { label: "Months", name: "months", widget: "string", default: "6" }
+                          - { label: "Payment", name: "payment", widget: "string", default: "356.231 CLP" }
+                          - { label: "Payment Info", name: "paymentInfo", widget: "string"}
+                          - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+                          - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+                          - { label: "Message", name: "message", widget: "string", required: false }  
+
+                    - label: "Right section", 
+                      name: "right_section",
+                      fields:
+                        - label: "Header", 
+                          name: "header",
+                          fields:
+                            - { label: "Heading one", name: "heading_one", widget: "string", default: "PART TIME" }
+                            - { label: "Heading two", name: "heading_two", widget: "string" }
+                            - { label: "Sub heading", name: "sub_heading", widget: "string", default: "and enjoy the best pricing in town"}
+                        - label: "Content", 
+                          name: "content",
+                          fields:
+                            - { label: "Price", name: "price", widget: "string", default: "2.415.000 CLP" }
+                            - { label: "Price info", name: "price_info", widget: "string", defaul: "single payment" }
+
+      - { label: "Active campaign location slug", name: "active_campaign_location_slug", widget: "string", defaul: "santiago-chile" }
+      - { label: "Breathecode location slug", name: "breathecode_location_slug", widget: "string", defaul: "santiago-chile" }
+      - { label: "GDPR Compliant", name: "gdpr_compliant", widget: "boolean", defaul: false}
+      
+      - { label: "City", name: "city", widget: "string" }
       - { label: "Name", name: "name", widget: "string", default: "Country"}
-      - { label: "Value", name: "value", widget: "string", default: "City" }
+      - { label: "Latitude", name: "latitude", widget: "string"}
+      - { label: "Longitude", name: "longitude", widget: "string"}
+      - { label: "Phone", name: "phone", widget: "string"}
+      - { label: "Address", name: "address", widget: "string"}
+      - { label: "Zip code", name: "zip_code", widget: "string", required: false}
+      - { label: "State", name: "state", widget: "string"}
+      - { label: "Country", name: "country", widget: "string"}
+      - label: "Socials"
+        name: "socials",
+          - fields:
+              - { label: "Social Name", name: "social_name", widget: "string", default: "Facebook"}
+                - { label: "Social link", name: "social_link", widget: "string", default: "https://www.facebook.com/4geeksacademy"}
+              - { label: "Social Name", name: "social_name", widget: "string", default: "Twitter"}
+                - { label: "Social link", name: "social_link", widget: "string", default: "https://www.twitter.com/4geeksacademy"}
+              - { label: "Social Name", name: "social_name", widget: "string", default: "Instagram"}
+                - { label: "Social link", name: "social_link", widget: "string", default: "https://www.instagram.com/4geeksacademy"}
+              - { label: "Social Name", name: "social_name", widget: "string", default: "Meetup"}
+                - { label: "Social link", name: "social_link", widget: "string", default: "https://www.meetup.com/4geeks-academy"}
+      - label: "Courses",
+        name: "courses",
+        fields:
+          - { widget: "string", default: "Full-Time"}
+          - { widget: "string", default: "Part-Time"}
+
+      - { label: "Flag icon", name: "flag_icon", widget: "string", required: false }
+      - { label: "Location map", name: "location_map", widget: "map", required: false }
+      - { label: "Location phone number", name: "location_phone_number", widget: "string", required: false }
+      - { label: "Location office image", name: "location_office_image", widget: "string", required: false }
+      - { label: "Location office image 2", name: "location_office_image2", widget: "string", required: false }
+      - { label: "Location office image 3", name: "location_office_image3", widget: "string", required: false}
+      - { label: "Should know", name: "should_know", widget: "string", required: false }
+
+      - { label: "Value", name: "value", widget: "string", default: "Chile" }
       - { label: "Language", name: "defaultLanguage", widget: "select", options: ['us', 'es'] }
