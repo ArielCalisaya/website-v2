@@ -6,6 +6,7 @@ import {RoundImage, Colors} from '../components/Styling'
 import LazyLoad from 'react-lazyload';
 import BaseBlogRender from './_baseBlogLayout'
 import Icon from '../components/Icon'
+import twitterUser from '../utils/twitter'
 
 
 const Blog = ({data, pageContext, yml}) => {
@@ -75,6 +76,13 @@ const Blog = ({data, pageContext, yml}) => {
                 <Row display="flex" github={`/blog`}>
                     <div className="card-columns" >
                         {blog_posts[0].map((item, i) => {
+                            const allowed = [`${item.node.frontmatter.author}`];
+                            const filtered = Object.keys(twitterUser)
+                                .filter(key => allowed.includes(key))
+                                .reduce((obj, key) => {
+                                    obj = twitterUser[key];
+                                    return obj;
+                            }, {});
                             return (
                                 <Column masonry size="12" key={i} height="auto" margin="0 0 40px 0">
                                     {item.node.frontmatter.image &&
@@ -117,7 +125,7 @@ const Blog = ({data, pageContext, yml}) => {
                                     <Row display="flex" height="auto" justifyContent="around">
                                         <Column size="1" alignSelf="center">
                                             <LazyLoad scroll={true} height={30} once={true}>
-                                                <RoundImage border="100%" width="30px" height="30px" bsize="contain" url={item.node.frontmatter.avatar} />
+                                                <RoundImage border="100%" width="30px" height="30px" bsize="contain" url={filtered.avatar} />
                                             </LazyLoad>
                                         </Column>
                                         <Column size="8" alignSelf="center">

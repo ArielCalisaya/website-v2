@@ -1,0 +1,111 @@
+# for testing name: test-repo
+  # name: git-gateway
+backend:
+  name: test-repo
+  branch: feature/netlifycms-master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}” ✨'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+publish_mode: editorial_workflow
+show_preview_links: true
+site_url: "https://netlify-with-gatsby4blog.netlify.app"
+display_url: "https://netlify-with-gatsby4blog.netlify.app"
+
+# Wehere it create images
+media_folder: "/static/images/blog"
+# where use the images
+public_folder: "/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/data/blog"
+    extension: .md
+    create: true
+    widget: "object"
+    #slug for markdown filename 
+    slug: "{{slug}}.{{fields.lang}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Author", name: "author", widget: "select", options: [ "4GeeksAcademy", "4GeeksAcademyES", "Jimena_y_yo", "MRiciglianoC", "alesanchezr" ]}
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "string"}
+      - { label: "Link", name: "link", widget: "string", required: false}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image"}
+      # Slug for frontmatter path
+      # - { label: "Slug", name: "slug", widget: string, required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'The slug can have no spaces or special characters']}
+      - { label: "Lang", name: "lang", widget: "select", options: ['us', 'es'] }
+      - { label: "Status", name: "status", widget: "hidden", default: "published"}
+      - { label: "Featured", name: "featured", widget: "boolean", default: false}
+      - { label: "Categories", name: "categories", widget: "list"}
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "location"
+    label: "Location"
+    folder: "src/data/location"
+    extension: .yml
+    create: true
+    widget: "object"
+    #slug for markdown filename 
+    slug: "{{slug}}.{{fields.defaultLanguage}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Meta Info", 
+        name: "meta_info",
+        fields:
+          - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'The slug can have no spaces or special characters']}
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Position", name: "position", widget: "number" }
+          - { label: "Description", name: "description", widget: "string", default: null }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false, default: "" }
+          - { label: "Redirects", name: "redirects", widget: "code", default: ["/location/, /{{fields.defaultLanguage}}/location"] }
+      - { label: "Seo Title", name: "seo_title", widget: "string", required: true }
+      - label: "Header", 
+        name: "header",
+        fields:
+            - { label: "Tagline", name: "tagline", widget: "string", default: "4GEEKS ACADEMY IN "}
+            - { label: "Sub Heading", name: "sub_heading", widget: "string", required: false}
+            - { label: "Paragraph", name: "paragraph", widget: "string" }
+            - { label: "Image", name: "image", widget: "image", required: true }
+            - { label: "Description", name: "description", widget: "string", default: null }
+
+      - label: "Button", 
+        name: "button",
+        fields:
+          - { label: "Syllabus button text", name: "syllabus_button_text", widget: "string", default: "DOWNLOAD SYLLABUS" }
+          - { label: "Apply button text", name: "apply_button_text", widget: "string", default: "APPLY NOW" }
+          - { label: "Syllabus submit text", name: "syllabus_submit_text", widget: "string", default: "DOWNLOAD"}
+          - { label: "Apply button link", name: "apply_button_link", widget: "string", default: "/apply" }
+          - { label: "Cohort more details text", name: "cohort_more_details_text", widget: "string", default: "DETAILS" }
+      - label: "Info box", 
+        name: "info_box",
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "Find us in {{fields.name}}" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Contact heading", name: "contact_heading", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Map url", name: "map_url", widget: "image", required: false }
+          - { label: "Alt", name: "alt", widget: "string", required: false }
+      - label: "News", 
+        name: "news",
+        fields:
+          - { label: "Title", name: "title", widget: "string", default: "4Geeks Academy in the news..." }
+
+      - label: "Upcoming", 
+        name: "upcoming",
+          fields:
+          - { label: "Title", name: "title", widget: "object", default: "Upcoming programs in {{fields.name}}" }
+      - { label: "Name", name: "name", widget: "string", default: "Country"}
+      - { label: "Value", name: "value", widget: "string", default: "City" }
+      - { label: "Language", name: "defaultLanguage", widget: "select", options: ['us', 'es'] }
