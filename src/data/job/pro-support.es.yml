@@ -1,0 +1,34 @@
+meta_info:
+  keywords: ""
+  slug: pro-support
+  title: Profesionar support
+  description: test
+  image: /images/bg/4Geeks-events-bg.jpg
+  redirects:
+    code: '["/pro-support", "/es/pro-support"]'
+banner_heading: testing heading
+banner_sub_heading: sub heading
+banner_image: /images/bg/companies-bg.jpg
+cities:
+  - Chile
+button_text: APLICA YA
+title: Admisión y Recursos Humanos
+description: Estamos revolucionando la industria de la educación de la
+  programación al graduar prósperos desarrolladores de software junior 10 veces
+  más rápido que las universidades, el 90% de nuestros graduados han sido
+  contratados en puestos relacionados con la programación con al menos un 30% de
+  aumento en su salario. Estamos buscando a alguien que nos ayude a aumentar
+  esos números, comprometiéndose con nuestros estudiantes y ex-alumnos y con
+  empleadores potenciales.  ¿Qué tipo de persona estamos buscando?
+content:
+  code: |-
+    - label: "Responsabilidades"
+      list:
+        - "1. Fusce dapibus"
+        - "2. Fusce dapibus, tellus ac cursus commodo, 
+        
+    - label: "Requirements"
+      list:
+        - "1. Fusce dapibus"
+        - "2. Fusce dapibus, tellus ac cursus commodo, 
+lang: es
