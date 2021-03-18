@@ -117,7 +117,6 @@ collections:
         widget: "object"
         fields:
           - { label: "Title", name: "title", widget: "string", default: "Upcoming programs in... " }
-      #   # TODO: ver si funciona object
     
       - label: "Images box"
         name: "images_box"
@@ -130,18 +129,13 @@ collections:
             widget: "object"
             fields:
             # FIXME: netlify forces to use this structure, will not return the expected yml structure
-              - image:
-                name: "image1"
-                widget: "object"
-                fields:
-                  - { label: "Path", name: "path", widget: "image", required: false }
-                  - { label: "Alt", name: "alt", widget: "string", required: false }
-              - image2:
-                name: image2
-                widget: "object"
-                fields:
-                  - { label: "Path2", name: "path", widget: "image", required: false }
-                  - { label: "Alt", name: "alt", widget: "string", required: false }
+              - label: "Path image"
+                name: "path"
+                widget: "markdown"
+              - label: "Path image"
+                name: path
+                widget: "markdown"
+                
       - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
       - label: "Prices" 
         name: "prices"
