@@ -1,7 +1,7 @@
 # for testing name: test-repo
-  # name: test-repo
+  # name: git-gateway
 backend:
-  name: git-gateway
+  name: test-repo
   branch: playground/next
   commit_messages:
     create: 'Create {{collection}} “{{slug}}” ✨'
@@ -59,7 +59,7 @@ collections:
     public_folder: "/images/locations"
     widget: "object"
     #slug for markdown filename 
-    slug: "{{fields.meta_info.fields.slug}}.{{fields.defaultLanguage}}"
+    slug: "{{fields.meta_info.slug}}.{{fields.defaultLanguage}}"
     editor:
       preview: true
     fields:
@@ -129,213 +129,213 @@ collections:
             name: "images"
             widget: "markdown"
                 
-      - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
-      - label: "Prices" 
-        name: "prices"
-        widget: "object"
-        fields:
-          - label: "Full-Time"
-            name: "full_time"
-            widget: "object"
-            fields:
-              - { label: "Slug", name: "slug", default: "full-time"}
-              - { label: "Duration", name: "duration", widget: "string", default: "9 Weeks"}
-              - label: "Left section"
-                name: "left_section"
-                widget: "object"
-                fields: 
-                  - label: "Header" 
-                    name: "header"
-                    widget: "object"
-                    fields:
-                      - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY ONLY AFTER"}
-                      - { label: "Heading two", name: "heading_two", widget: "string", default: "YOU GET A JOB"}
-                      - { label: "Sub heading", name: "sub_heading", widget: "string"}
-                  - label: "Content"
-                    name: "content"
-                    widget: "object"
-                    fields:
-                      - { label: "Price", name: "price", widget: "string" }
-                      - { label: "Price Info", name: "price_info", widget: "string"}
+      # - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
+      # - label: "Prices" 
+      #   name: "prices"
+      #   widget: "object"
+      #   fields:
+      #     - label: "Full-Time"
+      #       name: "full_time"
+      #       widget: "object"
+      #       fields:
+      #         - { label: "Slug", name: "slug", default: "full-time"}
+      #         - { label: "Duration", name: "duration", widget: "string", default: "9 Weeks"}
+      #         - label: "Left section"
+      #           name: "left_section"
+      #           widget: "object"
+      #           fields: 
+      #             - label: "Header" 
+      #               name: "header"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY ONLY AFTER"}
+      #                 - { label: "Heading two", name: "heading_two", widget: "string", default: "YOU GET A JOB"}
+      #                 - { label: "Sub heading", name: "sub_heading", widget: "string"}
+      #             - label: "Content"
+      #               name: "content"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Price", name: "price", widget: "string" }
+      #                 - { label: "Price Info", name: "price_info", widget: "string"}
 
-              - label: "Center section"
-                name: "center_section"
-                widget: "object"
-                fields:
-                  - label: "Header"
-                    name: "header"
-                    widget: "object"
-                    fields:
-                      - { label: "Heading one", name: "heading_one", widget: "string", default: "EXTENDED" }
-                      - { label: "Heading two", name: "heading_two", widget: "string", default: "PAYMENT PLAN" }
-                      - { label: "Sub heading", name: "sub_heading", widget: "string" }
-                  - label: "Plans"
-                    name: "plans"
-                    widget: "object"
-                    fields:
-                    # TODO: Test order array
-                      - label: "12 Months"
-                        name: "months-12"
-                        widget: "object"
-                        fields:
-                          - { label: "Months", name: "months", widget: "string", default: "12" }
-                          - { label: "Payment", name: "payment", widget: "string", default: "210.641 CLP" }
-                          - { label: "Payment Info", name: "paymentInfo", widget: "string", default: "per month + 414.000 deposit" }
-                          - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
-                          - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
-                          - { label: "Message", name: "message", widget: "string", required: false }
-                      - label: "6 Months"
-                        name: "6-months"
-                        widget: "object"
-                        fields:
-                          - { label: "Months", name: "months", widget: "string", default: "6" }
-                          - { label: "Payment", name: "payment", widget: "string", default: "407.121 CLP" }
-                          - { label: "Payment Info", name: "paymentInfo", widget: "string"}
-                          - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
-                          - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
-                          - { label: "Message", name: "message", widget: "string", required: false }
+      #         - label: "Center section"
+      #           name: "center_section"
+      #           widget: "object"
+      #           fields:
+      #             - label: "Header"
+      #               name: "header"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Heading one", name: "heading_one", widget: "string", default: "EXTENDED" }
+      #                 - { label: "Heading two", name: "heading_two", widget: "string", default: "PAYMENT PLAN" }
+      #                 - { label: "Sub heading", name: "sub_heading", widget: "string" }
+      #             - label: "Plans"
+      #               name: "plans"
+      #               widget: "object"
+      #               fields:
+      #               # TODO: Test order array
+      #                 - label: "12 Months"
+      #                   name: "months-12"
+      #                   widget: "object"
+      #                   fields:
+      #                     - { label: "Months", name: "months", widget: "string", default: "12" }
+      #                     - { label: "Payment", name: "payment", widget: "string", default: "210.641 CLP" }
+      #                     - { label: "Payment Info", name: "paymentInfo", widget: "string", default: "per month + 414.000 deposit" }
+      #                     - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+      #                     - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+      #                     - { label: "Message", name: "message", widget: "string", required: false }
+      #                 - label: "6 Months"
+      #                   name: "6-months"
+      #                   widget: "object"
+      #                   fields:
+      #                     - { label: "Months", name: "months", widget: "string", default: "6" }
+      #                     - { label: "Payment", name: "payment", widget: "string", default: "407.121 CLP" }
+      #                     - { label: "Payment Info", name: "paymentInfo", widget: "string"}
+      #                     - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+      #                     - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+      #                     - { label: "Message", name: "message", widget: "string", required: false }
 
-              - label: "Right section"
-                name: "right_section"
-                widget: "object"
-                fields:
-                  - label: "Header"
-                    name: "header"
-                    widget: "object"
-                    fields:
-                      - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY UPFRONT" }
-                      - { label: "Heading two", name: "heading_two", widget: "string", default: "(OUT OF POCKET)" }
-                      - { label: "Sub heading", name: "sub_heading", widget: "string" }
-                  - label: "Content"
-                    name: "content"
-                    widget: "object"
-                    fields:
-                      - { label: "Price", name: "price", widget: "string" }
-                      - { label: "Price info", name: "price_info", widget: "string", defaul: "single payment" }
+      #         - label: "Right section"
+      #           name: "right_section"
+      #           widget: "object"
+      #           fields:
+      #             - label: "Header"
+      #               name: "header"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY UPFRONT" }
+      #                 - { label: "Heading two", name: "heading_two", widget: "string", default: "(OUT OF POCKET)" }
+      #                 - { label: "Sub heading", name: "sub_heading", widget: "string" }
+      #             - label: "Content"
+      #               name: "content"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Price", name: "price", widget: "string" }
+      #                 - { label: "Price info", name: "price_info", widget: "string", defaul: "single payment" }
 
 
-          - label: "Part time"
-            name: "part_time"
-            widget: "object"
-            fields: 
-              - { label: "Slug", name: "slug", widget: "string", defaul: "part-time"}
-              - { label: "Duration", name: "duration", widget: "string", defaul: "16 Weeks"}
-              - label: "Left section"
-                name: "left_section"
-                widget: "object"
-                fields: 
-                  - label: "Header"
-                    name: "header"
-                    widget: "object"
-                    fields:
-                      - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY ONLY AFTER"}
-                      - { label: "Heading two", name: "heading_two", widget: "string", default: "YOU GET A JOB"}
-                      - { label: "Sub heading", name: "sub_heading", widget: "string"}
-                  - label: "Content"
-                    name: "content"
-                    widget: "object"
-                    fields:
-                      - { label: "Price", name: "price", widget: "string" }
-                      - { label: "Price Info", name: "price_info", widget: "string"}
+      #     - label: "Part time"
+      #       name: "part_time"
+      #       widget: "object"
+      #       fields: 
+      #         - { label: "Slug", name: "slug", widget: "string", defaul: "part-time"}
+      #         - { label: "Duration", name: "duration", widget: "string", defaul: "16 Weeks"}
+      #         - label: "Left section"
+      #           name: "left_section"
+      #           widget: "object"
+      #           fields: 
+      #             - label: "Header"
+      #               name: "header"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Heading one", name: "heading_one", widget: "string", default: "PAY ONLY AFTER"}
+      #                 - { label: "Heading two", name: "heading_two", widget: "string", default: "YOU GET A JOB"}
+      #                 - { label: "Sub heading", name: "sub_heading", widget: "string"}
+      #             - label: "Content"
+      #               name: "content"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Price", name: "price", widget: "string" }
+      #                 - { label: "Price Info", name: "price_info", widget: "string"}
 
-              - label: "Center section"
-                name: "center_section"
-                widget: "object"
-                fields:
-                  - label: "Header"
-                    name: "header"
-                    widget: "object"
-                    fields:
-                      - { label: "Heading one", name: "heading_one", widget: "string", default: "EXTENDED" }
-                      - { label: "Heading two", name: "heading_two", widget: "string" }
-                      - { label: "Sub heading", name: "sub_heading", widget: "string", default: "and enjoy the best pricing in town" }
-                  - label: "Plans"
-                    name: "plans"
-                    widget: "object"
-                    fields:
-                    # TODO: Test order array
-                      - label: "12 Months"
-                        name: "12-months"
-                        widget: "object"
-                        fields:
-                          - { label: "Months", name: "months", widget: "string", default: "12" }
-                          - { label: "Payment", name: "payment", widget: "string", default: "184.311 CLP" }
-                          - { label: "Payment Info", name: "paymentInfo", widget: "string", default: "per month + 362.250 deposit" }
-                          - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
-                          - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
-                          - { label: "Message", name: "message", widget: "string", required: false }
+      #         - label: "Center section"
+      #           name: "center_section"
+      #           widget: "object"
+      #           fields:
+      #             - label: "Header"
+      #               name: "header"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Heading one", name: "heading_one", widget: "string", default: "EXTENDED" }
+      #                 - { label: "Heading two", name: "heading_two", widget: "string" }
+      #                 - { label: "Sub heading", name: "sub_heading", widget: "string", default: "and enjoy the best pricing in town" }
+      #             - label: "Plans"
+      #               name: "plans"
+      #               widget: "object"
+      #               fields:
+      #               # TODO: Test order array
+      #                 - label: "12 Months"
+      #                   name: "12-months"
+      #                   widget: "object"
+      #                   fields:
+      #                     - { label: "Months", name: "months", widget: "string", default: "12" }
+      #                     - { label: "Payment", name: "payment", widget: "string", default: "184.311 CLP" }
+      #                     - { label: "Payment Info", name: "paymentInfo", widget: "string", default: "per month + 362.250 deposit" }
+      #                     - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+      #                     - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+      #                     - { label: "Message", name: "message", widget: "string", required: false }
 
-                      - label: "6 Months"
-                        name: "6-months"
-                        widget: "object"
-                        fields:
-                          - { label: "Months", name: "months", widget: "string", default: "6" }
-                          - { label: "Payment", name: "payment", widget: "string", default: "356.231 CLP" }
-                          - { label: "Payment Info", name: "paymentInfo", widget: "string"}
-                          - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
-                          - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
-                          - { label: "Message", name: "message", widget: "string", required: false }  
+      #                 - label: "6 Months"
+      #                   name: "6-months"
+      #                   widget: "object"
+      #                   fields:
+      #                     - { label: "Months", name: "months", widget: "string", default: "6" }
+      #                     - { label: "Payment", name: "payment", widget: "string", default: "356.231 CLP" }
+      #                     - { label: "Payment Info", name: "paymentInfo", widget: "string"}
+      #                     - { label: "Provider", name: "provider", widget: "string", default: "Quotanda" }
+      #                     - { label: "Logo", name: "logo", widget: "image", default: "/images/quotanda-logo.png" }
+      #                     - { label: "Message", name: "message", widget: "string", required: false }  
 
-              - label: "Right section"
-                name: "right_section"
-                widget: "object"
-                fields:
-                  - label: "Header"
-                    name: "header"
-                    widget: "object"
-                    fields:
-                      - { label: "Heading one", name: "heading_one", widget: "string", default: "PART TIME" }
-                      - { label: "Heading two", name: "heading_two", widget: "string" }
-                      - { label: "Sub heading", name: "sub_heading", widget: "string", default: "and enjoy the best pricing in town"}
-                  - label: "Content"
-                    name: "content"
-                    widget: "object"
-                    fields:
-                      - { label: "Price", name: "price", widget: "string", default: "2.415.000 CLP" }
-                      - { label: "Price info", name: "price_info", widget: "string", defaul: "single payment" }
+      #         - label: "Right section"
+      #           name: "right_section"
+      #           widget: "object"
+      #           fields:
+      #             - label: "Header"
+      #               name: "header"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Heading one", name: "heading_one", widget: "string", default: "PART TIME" }
+      #                 - { label: "Heading two", name: "heading_two", widget: "string" }
+      #                 - { label: "Sub heading", name: "sub_heading", widget: "string", default: "and enjoy the best pricing in town"}
+      #             - label: "Content"
+      #               name: "content"
+      #               widget: "object"
+      #               fields:
+      #                 - { label: "Price", name: "price", widget: "string", default: "2.415.000 CLP" }
+      #                 - { label: "Price info", name: "price_info", widget: "string", defaul: "single payment" }
 
-      - { label: "Active campaign location slug", name: "active_campaign_location_slug", widget: "string", defaul: "santiago-chile", required: false }
-      - { label: "Breathecode location slug", name: "breathecode_location_slug", widget: "string", defaul: "santiago-chile", required: false}
-      - { label: "GDPR Compliant", name: "gdpr_compliant", widget: "boolean", defaul: false}
+      # - { label: "Active campaign location slug", name: "active_campaign_location_slug", widget: "string", defaul: "santiago-chile", required: false }
+      # - { label: "Breathecode location slug", name: "breathecode_location_slug", widget: "string", defaul: "santiago-chile", required: false}
+      # - { label: "GDPR Compliant", name: "gdpr_compliant", widget: "boolean", defaul: false}
       
-      - { label: "City", name: "city", widget: "string", required: false }
-      - { label: "Name", name: "name", widget: "string", hint: "City"}
-      - { label: "Latitude", name: "latitude", widget: "string"}
-      - { label: "Longitude", name: "longitude", widget: "string"}
-      - { label: "Phone", name: "phone", widget: "string"}
-      - { label: "Address", name: "address", widget: "string"}
-      - { label: "Zip code", name: "zip_code", widget: "string", required: false}
-      - { label: "State", name: "state", widget: "string"}
-      - { label: "Country", name: "country", widget: "string"}
+      # - { label: "City", name: "city", widget: "string", required: false }
+      # - { label: "Name", name: "name", widget: "string", hint: "City"}
+      # - { label: "Latitude", name: "latitude", widget: "string"}
+      # - { label: "Longitude", name: "longitude", widget: "string"}
+      # - { label: "Phone", name: "phone", widget: "string"}
+      # - { label: "Address", name: "address", widget: "string"}
+      # - { label: "Zip code", name: "zip_code", widget: "string", required: false}
+      # - { label: "State", name: "state", widget: "string"}
+      # - { label: "Country", name: "country", widget: "string"}
 
-      - label: "Socials"
-        name: "socials"
-        widget: "object"
-        fields:
-          - label: "Facebook"
-            name: "facebook"
-            widget: "object"
-            fields: 
-              - { label: "Social Name", name: "social_name", widget: "string", default: "Facebook"}
-              - { label: "Social link", name: "social_link", widget: "string", default: "https://www.facebook.com/4geeksacademy"}
-          - label: "Twitter"
-            name: "twitter"
-            widget: "object"
-            fields: 
-              - { label: "Social Name", name: "social_name", widget: "string", default: "Twitter"}
-              - { label: "Social link", name: "social_link", widget: "string", default: "https://www.twitter.com/4geeksacademy"}
-          - label: "Instagram"
-            name: "instagram"
-            widget: "object"
-            fields: 
-              - { label: "Social Name", name: "social_name", widget: "string", default: "Instagram"}
-              - { label: "Social link", name: "social_link", widget: "string", default: "https://www.instagram.com/4geeksacademy"}
-          - label: "Meetup"
-            name: "meetup"
-            widget: "object"
-            fields: 
-              - { label: "Social Name", name: "social_name", widget: "string", default: "Meetup"}
-              - { label: "Social link", name: "social_link", widget: "string", default: "https://www.meetup.com/4geeks-academy"}
+      # - label: "Socials"
+      #   name: "socials"
+      #   widget: "object"
+      #   fields:
+      #     - label: "Facebook"
+      #       name: "facebook"
+      #       widget: "object"
+      #       fields: 
+      #         - { label: "Social Name", name: "social_name", widget: "string", default: "Facebook"}
+      #         - { label: "Social link", name: "social_link", widget: "string", default: "https://www.facebook.com/4geeksacademy"}
+      #     - label: "Twitter"
+      #       name: "twitter"
+      #       widget: "object"
+      #       fields: 
+      #         - { label: "Social Name", name: "social_name", widget: "string", default: "Twitter"}
+      #         - { label: "Social link", name: "social_link", widget: "string", default: "https://www.twitter.com/4geeksacademy"}
+      #     - label: "Instagram"
+      #       name: "instagram"
+      #       widget: "object"
+      #       fields: 
+      #         - { label: "Social Name", name: "social_name", widget: "string", default: "Instagram"}
+      #         - { label: "Social link", name: "social_link", widget: "string", default: "https://www.instagram.com/4geeksacademy"}
+      #     - label: "Meetup"
+      #       name: "meetup"
+      #       widget: "object"
+      #       fields: 
+      #         - { label: "Social Name", name: "social_name", widget: "string", default: "Meetup"}
+      #         - { label: "Social link", name: "social_link", widget: "string", default: "https://www.meetup.com/4geeks-academy"}
       
       - { label: "Courses", name: "courses", widget: "list", default: ["Full-Time", "Part-Time"]}
       - { label: "Flag icon", name: "flag_icon", widget: "string", required: false }
