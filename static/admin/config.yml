@@ -128,8 +128,8 @@ collections:
           - label: "Images"
             name: "images"
             widget: "markdown"
+      - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
                 
-      # - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
       # - label: "Prices" 
       #   name: "prices"
       #   widget: "object"
