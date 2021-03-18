@@ -41,7 +41,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image"}
       # Slug for frontmatter path
-      # - { label: "Slug", name: "slug", widget: string, required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'The slug can have no spaces or special characters']}
+      - { label: "Slug", name: "slug", widget: string, required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'The slug can have no spaces or special characters']}
       - { label: "Lang", name: "lang", widget: "select", options: ['us', 'es'] }
       - { label: "Status", name: "status", widget: "hidden", default: "published"}
       - { label: "Featured", name: "featured", widget: "boolean", default: false}
@@ -53,13 +53,13 @@ collections:
   - name: "location"
     label: "Location"
     folder: "src/data/location"
-    extension: "yml"
     create: true
+    extension: "yml"
     media_folder: "/static/images/locations"
     public_folder: "/images/locations"
     widget: "object"
     #slug for markdown filename 
-    slug: "{{slug}}.{{fields.defaultLanguage}}"
+    slug: "{{fields.meta_info.fields.slug}}.{{fields.defaultLanguage}}"
     editor:
       preview: true
     fields:
@@ -98,7 +98,7 @@ collections:
         name: "info_box"
         widget: "object"
         fields:
-          - { label: "Heading", name: "heading", widget: "string", default: "Find us in {{fields.name}}" }
+          - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Address", name: "address", widget: "string" }
           - { label: "Contact heading", name: "contact_heading", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
