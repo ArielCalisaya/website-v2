@@ -1,7 +1,7 @@
 # for testing name: test-repo
-  # name: test-repo
+  # name: git-gateway
 backend:
-  name: git-gateway
+  name: test-repo
   branch: playground/next
   commit_messages:
     create: 'Create {{collection}} “{{slug}}” ✨'
@@ -124,17 +124,10 @@ collections:
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "What you should know about this location: " }
           - { label: "Content", name: "content", widget: "string"}
+            # FIXME: netlify forces to use this structure, will not return the expected yml structure
           - label: "Images"
             name: "images"
-            widget: "object"
-            fields:
-            # FIXME: netlify forces to use this structure, will not return the expected yml structure
-              - label: "Path image"
-                name: "path"
-                widget: "markdown"
-              - label: "Path image"
-                name: path
-                widget: "markdown"
+            widget: "markdown"
                 
       - { label: "Has financials opstions", name: "hasFinancialsOption", widget: "boolean", default: false }
       - label: "Prices" 
