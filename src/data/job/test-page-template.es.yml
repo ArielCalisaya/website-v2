@@ -1,0 +1,27 @@
+meta_info:
+  keywords: ""
+  slug: test-page-template
+  title: Test Page Template
+  description: test
+  image: /images/bg/ISA-Blog-Cover.png
+  redirects:
+    code: '["/test-page-template/", "/es/test-page-template"]'
+banner_heading: test
+banner_sub_heading: test
+banner_image: /images/bg/apple-building.jpg
+cities:
+  - Chile
+button_text: APLICA YA
+title: Test title
+description: description
+content:
+  code: |-
+    - label: "Responsabilidades"
+      list:
+          - "1. Fusce dapibus, "
+          - "2. Fusce dapibus, tellus ac cursus commodo, tortor"
+    - label: "Requirements"
+      list:
+          - "1. Fusce dapibus, tellus ac cursus commodo, "
+          - "2. Fusce dapibus, "
+lang: es
