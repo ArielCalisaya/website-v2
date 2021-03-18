@@ -73,8 +73,8 @@ collections:
           - { label: "Description", name: "description", widget: "string", default: null }
           - { label: "Image", name: "image", widget: "image", required: false }
           - { label: "Keywords", name: "keywords", widget: "string", required: false, default: "" }
-          # FIXME: not work
-          - { label: "Redirects", name: "redirects", code: 'redirects', lang: 'yml' , widget: "code", hint: "Example: [/location/, /us/location]" }
+          # FIXME: will not return the expected yml structure
+          - { label: "Redirects", name: "redirects", widget: "list", hint: "Example: [/location/, /us/location]" }
       - { label: "Banner heading", name: "banner_heading", widget: "string" }
       - { label: "Banner sub heading", name: "banner_sub_heading", widget: "string" }
       - { label: "Banner Image", name: "banner_image", widget: "image" }
@@ -86,22 +86,12 @@ collections:
       # FIXME: will not return the expected yml structure
       - label: "Content"
         name: "content"
-        widget: "code"
+        widget: "string"
         hint: "  - label: 'responsabilities'
                    list:
                     - '1. '
                     - '2. '"
       - { label: "Languages", name: "lang", widget: "select", options: ["us", es]}
-
-
-
-
-
-
-
-
-
-
 
 
 
