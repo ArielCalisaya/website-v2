@@ -1,7 +1,7 @@
 # for testing name: test-repo
-  # name: git-gateway
+  # name: test-repo
 backend:
-  name: test-repo
+  name: git-gateway
   branch: playground/next
   commit_messages:
     create: 'Create {{collection}} “{{slug}}” ✨'
