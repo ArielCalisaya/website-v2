@@ -119,8 +119,8 @@ collections:
           - { label: "Title", name: "title", widget: "string", default: "Upcoming programs in... " }
       #   # TODO: ver si funciona object
     
-      - label: "Carousel box"
-        name: "carousel_box"
+      - label: "Images box"
+        name: "images_box"
         widget: "object"
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "What you should know about this location: " }
@@ -129,7 +129,7 @@ collections:
             name: "images"
             widget: "object"
             fields:
-            # FIXME: no devolvera la misma estructura yml final
+            # FIXME: netlify forces to use this structure, will not return the expected yml structure
               - image:
                 name: "image1"
                 widget: "object"
