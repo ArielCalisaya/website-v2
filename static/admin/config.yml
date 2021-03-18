@@ -60,7 +60,7 @@ collections:
     public_folder: "/images/bg"
     widget: "object"
     #slug for markdown filename 
-    slug: "{{fields.meta_info.slug}}.{{fields.defaultLanguage}}"
+    slug: "{{fields.meta_info.slug}}.{{fields.lang}}"
     editor:
       preview: true
     fields:
@@ -90,6 +90,7 @@ collections:
                    list:
                     - '1. '
                     - '2. '"
+      - { label: "Languages", name: "lang", widget: "select", option: ["us", es]}
 
 
 
