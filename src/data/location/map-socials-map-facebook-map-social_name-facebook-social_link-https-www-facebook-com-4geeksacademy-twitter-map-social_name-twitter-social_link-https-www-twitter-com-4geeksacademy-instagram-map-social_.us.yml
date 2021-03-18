@@ -1,0 +1,150 @@
+meta_info:
+  keywords: testing
+  slug: test-page
+  title: Test PAge
+  position: 12
+  description: test
+  image: /images/locations/caracas-noche-1.jpg
+  redirects: "[/location/, /us/location]"
+seo_title: test title seo
+header:
+  tagline: "4GEEKS ACADEMY IN "
+  sub_heading: testing
+  paragraph: test
+  description: test
+  image: /images/locations/caracas-noche-2.jpg
+button:
+  syllabus_button_text: DOWNLOAD SYLLABUS
+  apply_button_text: APPLY NOW
+  syllabus_submit_text: DOWNLOAD
+  apply_button_link: /apply
+  cohort_more_details_text: DETAILS
+info_box:
+  heading: Find us in {{fields.name}}
+  address: monaco
+  phone: "0321319399"
+  contact_heading: Monaco
+  email: asd@gmail.com
+  image: /images/locations/miami-map.png
+  map_url: /images/locations/madid-noche-1.jpg
+  alt: test
+news:
+  title: 4Geeks Academy in the news...
+upcoming:
+  title: "Upcoming programs in... "
+carousel_box:
+  heading: "What you should know about this location: "
+  content: test
+  images:
+    image1:
+      path: /images/locations/caracas-noche-2.jpg
+      alt: path1
+    image2:
+      path: /images/locations/caracas-loc.jpg
+      alt: path2
+hasFinancialsOption: true
+prices:
+  full_time:
+    slug: full-time
+    duration: 9 Weeks
+    left_section:
+      header:
+        heading_one: PAY ONLY AFTER
+        heading_two: YOU GET A JOB
+        sub_heading: testing
+      content:
+        price: "123"
+        price_info: "124"
+    center_section:
+      header:
+        heading_one: EXTENDED
+        heading_two: PAYMENT PLAN
+        sub_heading: "2345"
+      plans:
+        months-12:
+          months: "12"
+          payment: 210.641 CLP
+          paymentInfo: per month + 414.000 deposit
+          provider: Quotanda
+          logo: /images/quotanda-logo.png
+        6-months:
+          months: "6"
+          payment: 407.121 CLP
+          provider: Quotanda
+          logo: /images/quotanda-logo.png
+          paymentInfo: "2343"
+          message: test
+    right_section:
+      header:
+        heading_one: PAY UPFRONT
+        heading_two: (OUT OF POCKET)
+        sub_heading: test
+      content:
+        price: testttt
+        price_info: "1324"
+  part_time:
+    left_section:
+      header:
+        heading_one: PAY ONLY AFTER
+        heading_two: YOU GET A JOB
+        sub_heading: test
+      content:
+        price: "324"
+        price_info: "34"
+    center_section:
+      header:
+        heading_one: EXTENDED
+        sub_heading: and enjoy the best pricing in town
+        heading_two: 234t
+      plans:
+        12-months:
+          months: "12"
+          payment: 184.311 CLP
+          paymentInfo: per month + 362.250 deposit
+          provider: Quotanda
+          logo: /images/quotanda-logo.png
+        6-months:
+          months: "6"
+          payment: 356.231 CLP
+          provider: Quotanda
+          logo: /images/quotanda-logo.png
+          message: test
+          paymentInfo: "32423"
+    right_section:
+      header:
+        heading_one: PART TIME
+        sub_heading: and enjoy the best pricing in town
+        heading_two: test
+      content:
+        price: 2.415.000 CLP
+        price_info: test
+    slug: part-time
+    duration: "12"
+gdpr_compliant: true
+city: Recoleta
+name: testing
+latitude: "543"
+longitude: "543"
+phone: "12341244"
+address: deer
+zip_code: "23"
+state: Región Metropolitana
+country: Chile
+socials:
+  facebook:
+    social_name: Facebook
+    social_link: https://www.facebook.com/4geeksacademy
+  twitter:
+    social_name: Twitter
+    social_link: https://www.twitter.com/4geeksacademy
+  instagram:
+    social_name: Instagram
+    social_link: https://www.instagram.com/4geeksacademy
+  meetup:
+    social_name: Meetup
+    social_link: https://www.meetup.com/4geeks-academy
+courses:
+  - '["/location/santiago"'
+  - '"/us/location"]'
+value: chile
+defaultLanguage: us
