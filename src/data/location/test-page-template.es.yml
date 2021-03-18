@@ -1,0 +1,47 @@
+meta_info:
+  keywords: test
+  slug: test-page-template
+  title: Test Page Template
+  position: 123
+  description: test
+  image: /images/locations/caracas-loc-2.jpeg
+  redirects: "[/location/, /us/location]"
+seo_title: test
+header:
+  tagline: "4GEEKS ACADEMY IN "
+  sub_heading: test
+  paragraph: test
+  image: /images/locations/caracas-noche-1.jpg
+  description: ewview
+button:
+  syllabus_button_text: DOWNLOAD SYLLABUS
+  apply_button_text: APPLY NOW
+  syllabus_submit_text: DOWNLOAD
+  apply_button_link: /apply
+  cohort_more_details_text: DETAILS
+info_box:
+  heading: Find us in
+  address: monaco
+  phone: "0321319399"
+  contact_heading: "5432"
+  email: email@gmail.com
+  image: /images/locations/caracas-loc-2.jpeg
+  map_url: /images/locations/caracas-loc.jpg
+  alt: test path
+news:
+  title: 4Geeks Academy in the news...
+upcoming:
+  title: "Upcoming programs in... "
+images_box:
+  heading: "What you should know about this location: "
+  content: test content
+  images: |-
+    ![Santiago Location Image](/images/locations/caracas-map.png)
+
+    ![Santiago Location Image](/images/locations/madrid-map.png)
+hasFinancialsOption: true
+courses:
+  - Full-Time
+  - Part-Time
+value: Chile
+defaultLanguage: es
