@@ -90,7 +90,7 @@ collections:
                    list:
                     - '1. '
                     - '2. '"
-      - { label: "Languages", name: "lang", widget: "select", option: ["us", es]}
+      - { label: "Languages", name: "lang", widget: "select", options: ["us", es]}
 
 
 
