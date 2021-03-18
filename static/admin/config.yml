@@ -51,47 +51,47 @@ collections:
 
 
 # TODO: ---------------------------- JOB ---------------------------
-  - name: "job"
-    label: "Job"
-    folder: "src/data/job"
-    create: true
-    extension: "yml"
-    media_folder: "/static/images/bg"
-    public_folder: "/images/bg"
-    widget: "object"
-    #slug for markdown filename 
-    slug: "{{fields.meta_info.slug}}.{{fields.lang}}"
-    editor:
-      preview: true
-    fields:
-      - label: "Meta Info"
-        name: "meta_info"
-        widget: "object"
-        fields:
-          - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'The slug can have no spaces or special characters']}
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string", default: null }
-          - { label: "Image", name: "image", widget: "image", required: false }
-          - { label: "Keywords", name: "keywords", widget: "string", required: false, default: "" }
-          # FIXME: will not return the expected yml structure
-          - { label: "Redirects", name: "redirects", widget: "list", hint: "Example: [/location/, /us/location]" }
-      - { label: "Banner heading", name: "banner_heading", widget: "string" }
-      - { label: "Banner sub heading", name: "banner_sub_heading", widget: "string" }
-      - { label: "Banner Image", name: "banner_image", widget: "image" }
-      - { label: "Cities", name: "cities", widget: "list" }
-      - { label: "Button text", name: "button_text", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
+  # - name: "job"
+  #   label: "Job"
+  #   folder: "src/data/job"
+  #   create: true
+  #   extension: "yml"
+  #   media_folder: "/static/images/bg"
+  #   public_folder: "/images/bg"
+  #   widget: "object"
+  #   #slug for markdown filename 
+  #   slug: "{{fields.meta_info.slug}}.{{fields.lang}}"
+  #   editor:
+  #     preview: true
+  #   fields:
+  #     - label: "Meta Info"
+  #       name: "meta_info"
+  #       widget: "object"
+  #       fields:
+  #         - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'The slug can have no spaces or special characters']}
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Description", name: "description", widget: "string", default: null }
+  #         - { label: "Image", name: "image", widget: "image", required: false }
+  #         - { label: "Keywords", name: "keywords", widget: "string", required: false, default: "" }
+  #         # FIXME: will not return the expected yml structure
+  #         - { label: "Redirects", name: "redirects", widget: "list", hint: "Example: [/location/, /us/location]" }
+  #     - { label: "Banner heading", name: "banner_heading", widget: "string" }
+  #     - { label: "Banner sub heading", name: "banner_sub_heading", widget: "string" }
+  #     - { label: "Banner Image", name: "banner_image", widget: "image" }
+  #     - { label: "Cities", name: "cities", widget: "list" }
+  #     - { label: "Button text", name: "button_text", widget: "string" }
+  #     - { label: "Title", name: "title", widget: "string" }
+  #     - { label: "Description", name: "description", widget: "string" }
 
-      # FIXME: will not return the expected yml structure
-      - label: "Content"
-        name: "content"
-        widget: "string"
-        hint: "  - label: 'responsabilities'
-                   list:
-                    - '1. '
-                    - '2. '"
-      - { label: "Languages", name: "lang", widget: "select", options: ["us", es]}
+  #     # FIXME: will not return the expected yml structure
+  #     - label: "Content"
+  #       name: "content"
+  #       widget: "string"
+  #       hint: "  - label: 'responsabilities'
+  #                  list:
+  #                   - '1. '
+  #                   - '2. '"
+  #     - { label: "Languages", name: "lang", widget: "select", options: ["us", es]}
 
 
 
