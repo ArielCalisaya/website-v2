@@ -26,7 +26,7 @@ import Testimonials from '../new_components/Testimonials';
 // import {MegaMenu} from '../new_components/NavbarDesktop';
 import Card from '../components/Card';
 import GeeksVsOthers from '../components/GeeksVsOthers';
-import {WrapperCustom} from '../new_components/Sections';
+// import {WrapperCustom} from '../new_components/Sections';
 
 
 const imageSvg = props => <svg style={props.style} width="587" height="514" viewBox="0 0 587 514" fill="none" xmlns="http://www.w3.org/2000/svg">
