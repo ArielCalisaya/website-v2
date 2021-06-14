@@ -98,6 +98,12 @@
     "workerize-loader": "^1.3.0"
   },
   "devDependencies": {
+    "@layer0/cli": "^3.13.3",
+    "@layer0/core": "^3.13.3",
+    "@layer0/devtools": "^3.13.3",
+    "@layer0/gatsby": "^3.13.3",
+    "@layer0/prefetch": "^3.13.3",
+    "@layer0/react": "^3.13.3",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.1.11",
